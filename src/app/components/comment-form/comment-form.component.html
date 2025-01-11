@@ -1,0 +1,11 @@
+<div id="comment-form">
+    <mat-form-field>
+        <mat-label>Comentário</mat-label>
+        <input matInput #input #comment placeholder="Insira aqui um comentário..." [(ngModel)]="this.comment" />
+    </mat-form-field>
+    @if (comment.value.length > 0) {
+    <button mat-fab (click)="onSubmit()">
+        Enviar
+    </button>
+    }
+</div>
