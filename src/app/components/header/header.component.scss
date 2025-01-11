@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../styles/theme-colors" as colors;
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    color: var(--primary-100);
+  }
+
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: map.get(colors.$primary-palette, 30),
+    )
+  );
+}
