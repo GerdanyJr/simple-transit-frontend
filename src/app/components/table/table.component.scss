@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../styles/theme-colors" as colors;
+
 :root {
   height: 100%;
   display: flex;
@@ -12,6 +15,11 @@ mat-progress-spinner {
   left: 50%;
 }
 
-tr {
+#row {
   cursor: pointer;
+}
+
+#row:hover {
+  background-color: map.get(colors.$primary-palette, neutral, 35);
+  transition: all 0.5s ease-in-out;
 }
