@@ -1,0 +1,8 @@
+<mat-form-field>
+    <mat-label>{{ label() }}</mat-label>
+    <input matInput #input [(ngModel)]="searchTerm" />
+</mat-form-field>
+<button [disabled]="disableButton()" (click)="onSearchClick()" id="button" mat-fab>
+    Search
+    <mat-icon>search</mat-icon>
+</button>
