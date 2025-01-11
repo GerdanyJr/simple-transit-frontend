@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../styles/theme-colors" as colors;
+
+#container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+
+  #header-container {
+    height: 10%;
+  }
+
+  #aside-container {
+    flex: 1;
+    overflow-y: hidden;
+  }
+
+}

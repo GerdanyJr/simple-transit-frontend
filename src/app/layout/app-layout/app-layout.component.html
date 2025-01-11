@@ -1,0 +1,9 @@
+<div id="container">
+    <app-header (menuClick)="drawer.toggle()" />
+
+    <div id="aside-container">
+        <app-aside-bar>
+            <router-outlet />
+        </app-aside-bar>
+    </div>
+</div>
