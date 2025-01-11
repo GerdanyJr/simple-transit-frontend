@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../styles/theme-colors" as colors;
+
+mat-drawer-container {
+  height: 100%;
+  width: 100%;
+
+  main {
+    flex: 1;
+    padding: 0.5em 1em;
+  }
+
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: map.get(colors.$primary-palette, 35),
+      container-width: 15em,
+    )
+  );
+}
