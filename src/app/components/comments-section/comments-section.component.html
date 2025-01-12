@@ -17,7 +17,7 @@
                 <p class="comment">{{ comment.comment }}</p>
               </div>
               @if (comment.userId === userId()) {
-                <button mat-icon-button (click)="onCommentDelete.emit(comment.id)">
+                <button mat-icon-button (click)="commentDelete.emit(comment.id)">
                   <mat-icon>delete</mat-icon>
                 </button>
               }

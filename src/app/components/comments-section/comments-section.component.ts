@@ -25,5 +25,5 @@ export class CommentsSectionComponent {
   comments = input.required<Comment[]>();
   numberOfComments = input.required<number>();
   userId = input.required<number>();
-  onCommentDelete = output<number>();
+  commentDelete = output<number>();
 }
