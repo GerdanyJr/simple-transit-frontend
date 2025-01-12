@@ -1,5 +1,7 @@
 <app-searchbar label="Palavra Chave" (onSearch)="handleSearch($event)" />
 <app-table
   [data]="reports()?.data!"
+  [totalElements]="reports()?.totalElements!"
+  [numberOfElements]="reports()?.numberOfElements!"
   [isLoading]="isLoading()"
   (sortChange)="onSortChange($event)" />

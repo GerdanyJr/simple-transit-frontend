@@ -16,6 +16,7 @@ export interface ReportsResponse {
     data: Report[];
     currentPage: number;
     pageNumber: number;
+    totalElements: number;
     numberOfElements: number;
     isLastPage: boolean;
 }

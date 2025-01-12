@@ -25,6 +25,8 @@ import { SortChange } from './table.model';
 })
 export class TableComponent implements AfterViewChecked, OnChanges {
   data = input.required<Report[]>();
+  totalElements = input.required<number>();
+  numberOfElements = input.required<number>();
   isLoading = input<boolean | null>();
 
   sortChange = output<SortChange>();
