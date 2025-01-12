@@ -17,13 +17,13 @@ import { Router } from '@angular/router';
 export class CommentFormComponent {
   comment = signal<string>("");
   isUserLoggedIn = input.required<boolean>();
-  onCommentSubmit = output<string>();
+  commentSubmit = output<string>();
 
   constructor(private router: Router) { }
 
   onSubmit() {
     if (this.isUserLoggedIn()) {
-      this.onCommentSubmit.emit(this.comment());
+      this.commentSubmit.emit(this.comment());
     } else {
       this.router.navigate(["auth/login"]);
     }

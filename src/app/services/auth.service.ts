@@ -28,4 +28,8 @@ export class AuthService {
       .httpClient
       .post(`${this._baseUrl}/usuarios/`, { name, login, password });
   }
+
+  getAuthToken() {
+    return this.user.value?.authToken || null;
+  }
 }

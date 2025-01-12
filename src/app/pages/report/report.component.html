@@ -21,13 +21,12 @@
       {{ report()?.description }}
     </p>
     <app-comment-form
-      (onCommentSubmit)="this.onCommentSubmit($event)"
-      [isUserLoggedIn]="false" />
+      (commentSubmit)="this.onCommentSubmit($event)"
+      [isUserLoggedIn]="this.isAuthenticated()" />
     <app-comments-section
       [comments]="comments()?.data!"
       [numberOfComments]="comments()?.numberOfElements!"
       [isLoading]="isLoading()"
-      [userId]="userId"
-      (commentDelete)="onCommentDelete($event)" />
+      [userId]="report()?.userId!" />
   }
 </div>
