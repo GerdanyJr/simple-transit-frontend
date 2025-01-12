@@ -2,21 +2,21 @@
     @if (numberOfComments() !== 0)  {
         <h1>{{ numberOfComments() }} Comentários</h1>
     }
-    @if (!isLoading() || comments().length != 0) {
+    @if (!isLoading() || comments().length !== 0) {
       <mat-list role="list">
         @for (comment of comments(); track comment.id; let last = $last) {
           <mat-list-item role="listitem">
             <div id="comment-container">
               <div>
                 <p class="author">
-                  {{ comment.userName }}
+                  {{ comment.username }}
                   <span>
                     {{ comment.date | date: 'MMM d, y, h:mm a' }}
                   </span>
                 </p>
                 <p class="comment">{{ comment.comment }}</p>
               </div>
-              @if (comment.userId == userId()) {
+              @if (comment.userId === userId()) {
                 <button mat-icon-button (click)="onCommentDelete.emit(comment.id)">
                   <mat-icon>delete</mat-icon>
                 </button>
@@ -27,7 +27,7 @@
             <mat-divider />
           }
         }
-        @if (isLoading() && comments().length != 0) {
+        @if (isLoading() && comments().length !== 0) {
           <mat-spinner diameter="20" />
         }
       </mat-list>

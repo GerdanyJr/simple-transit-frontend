@@ -1,0 +1,5 @@
+<app-searchbar label="Palavra Chave" (onSearch)="handleSearch($event)" />
+<app-table
+  [data]="reports()?.data!"
+  [isLoading]="isLoading()"
+  (sortChange)="onSortChange($event)" />
