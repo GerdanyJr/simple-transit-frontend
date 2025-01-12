@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "../../styles/theme-colors" as colors;
+
+#container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #101415;
+}
+
+mat-card {
+  padding: 1em 2em;
+  width: 40%;
+  background-color: map.get(colors.$primary-palette, 35);
+}
