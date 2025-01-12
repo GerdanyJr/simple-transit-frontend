@@ -1,17 +1,21 @@
 <mat-drawer-container autosize>
-    <mat-drawer #drawer mode="side">
-        <mat-nav-list role="list">
-            @for (option of NAVOPTIONS; track option.text) {
-            <mat-list-item role="listitem">
-                <a [routerLink]="option.redirect" mat-list-item>
-                    <mat-icon matListItemIcon class="icon">{{ option.icon }}</mat-icon>
-                    <span>{{ option.text }}</span>
-                </a>
-            </mat-list-item>
-            }
-        </mat-nav-list>
-    </mat-drawer>
-    <main>
-        <ng-content />
-    </main>
+  <mat-drawer #drawer mode="side">
+    <mat-nav-list role="list">
+      @for (option of NAVOPTIONS; track option.text) {
+        @if (!option.protected || (option.protected && isAuthenticated())) {
+          <mat-list-item role="listitem">
+            <a [routerLink]="option.redirect" mat-list-item>
+              <mat-icon matListItemIcon class="icon">{{
+                option.icon
+              }}</mat-icon>
+              <span>{{ option.text }}</span>
+            </a>
+          </mat-list-item>
+        }
+      }
+    </mat-nav-list>
+  </mat-drawer>
+  <main>
+    <ng-content />
+  </main>
 </mat-drawer-container>
