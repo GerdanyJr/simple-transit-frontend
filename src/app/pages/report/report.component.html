@@ -1,0 +1,33 @@
+<div id="container">
+  @if (isLoading()) {
+    <mat-spinner />
+  } @else {
+    <h1>
+      {{ report()?.summary }}
+    </h1>
+    <mat-divider />
+    <div id="info">
+      <p>
+        <mat-icon>person</mat-icon>
+        Relatado por: <strong>{{ report()?.username }}</strong>
+      </p>
+      <p>
+        <mat-icon>calendar_month</mat-icon>
+        Publicado em:
+        <strong>{{ report()?.timestamp | date: "dd/MM/yyyy hh:mm" }}</strong>
+      </p>
+    </div>
+    <p>
+      {{ report()?.description }}
+    </p>
+    <app-comment-form
+      (onCommentSubmit)="this.onCommentSubmit($event)"
+      [isUserLoggedIn]="false" />
+    <app-comments-section
+      [comments]="comments()?.data!"
+      [numberOfComments]="comments()?.numberOfElements!"
+      [isLoading]="isLoading()"
+      [userId]="userId"
+      (onCommentDelete)="onCommentDelete($event)" />
+  }
+</div>

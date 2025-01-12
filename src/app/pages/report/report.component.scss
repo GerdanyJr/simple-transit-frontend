@@ -1,0 +1,55 @@
+@use "sass:map";
+@use "../../styles/theme-colors" as colors;
+@use "@angular/material" as mat;
+
+#container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3em 5em;
+
+  mat-spinner {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+  }
+
+  mat-divider {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+  }
+
+  p {
+    text-align: justify;
+    font-size: 1.3em;
+    line-height: 1.5;
+  }
+
+  #info {
+    align-self: start;
+    margin-bottom: 1em;
+
+    p {
+      font-size: 0.7em;
+      display: flex;
+      align-items: center;
+      color: map-get(colors.$primary-palette, neutral, 60);
+
+      mat-icon {
+        font-size: 2em;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}
