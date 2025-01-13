@@ -38,7 +38,7 @@ export class AsideBarComponent implements OnInit, OnDestroy {
     {
       text: "Criar Ocorrência",
       icon: "add",
-      redirect: "/reports/create",
+      redirect: "/reports/create-report",
       protected: true
     },
     {

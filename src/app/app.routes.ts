@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
+import { CreateReportComponent } from './pages/create-report/create-report.component';
 
 export const routes: Routes = [
     {
@@ -44,6 +45,10 @@ export const routes: Routes = [
                     {
                         path: "",
                         component: ReportsComponent
+                    },
+                    {
+                        path: "create-report",
+                        component: CreateReportComponent
                     },
                     {
                         path: ":id",

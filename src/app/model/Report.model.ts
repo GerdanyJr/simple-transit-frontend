@@ -32,3 +32,18 @@ export interface Report {
     userId: number;
     reportTypeId: number;
 }
+
+export interface ReportType {
+    id: number;
+    description: string;
+}
+
+export interface CreateReportReq {
+    summary: string;
+    description: string;
+    timestamp: string;
+    address: string;
+    latitude: number;
+    longitude: number;
+    reportTypeId: number;
+}

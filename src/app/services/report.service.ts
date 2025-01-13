@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ReportByIdResponse, ReportsResponse } from '../model/Report.model';
+import { CreateReportReq, ReportByIdResponse, ReportsResponse } from '../model/Report.model';
 import { ReportsFilter } from '../types/Filter';
 import { HttpClient } from '@angular/common/http';
 import { CommentResponse } from '../model/Comment.model';
@@ -53,6 +53,12 @@ export class ReportService {
     return this
       .httpClient
       .get<CommentResponse>(`${this._baseUrl}/ocorrencias/${reportId}/comentarios`)
+  }
+
+  createReport(req: CreateReportReq) {
+    return this
+      .httpClient
+      .post(`${this._baseUrl}/ocorrencias/`, req);
   }
 
 }
