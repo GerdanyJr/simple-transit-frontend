@@ -41,4 +41,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.menuClick.emit();
   }
 
+  logout() {
+    this.authService.logout();
+  }
+
 }

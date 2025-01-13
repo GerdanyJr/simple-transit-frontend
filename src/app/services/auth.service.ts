@@ -32,4 +32,10 @@ export class AuthService {
   getAuthToken() {
     return this.user.value?.authToken || null;
   }
+
+  logout() {
+    this
+      .user
+      .next(null);
+  }
 }
